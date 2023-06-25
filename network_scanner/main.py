@@ -4,8 +4,6 @@ import scapy.all as scapy
 
 
 def scan(ip):
-    # scapy obj has properties like: summary, show, scapy.ls(scapy.ARP())
-
     arp_req = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_req_broadcast = broadcast / arp_req
