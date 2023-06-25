@@ -10,14 +10,14 @@ def scan(ip):
     
     ans = scapy.srp(arp_req_broadcast, timeout=1, verbose=False)[0]
 
-    # Parsing getting ip and mac h/w 
     client_list = []
-    # print("IP\t\t\t\tMAC Addrs\n------------------------------------------")
+    print("IP\t\t\t\tMAC Addrs\n------------------------------------------")
     for ele in ans:
+        # Parsing getting ip and mac 
         client_list.append({"ip": ele[1].psrc, "mac": ele[1].hwdst})
-        # print(ele[1].psrc, end="\t\t")
-        # print(ele[1].hwdst, "\n")
-        # print('-------------------------------------------')
+        print(ele[1].psrc, end="\t\t")
+        print(ele[1].hwdst, "\n")
+        print('-------------------------------------------')
     print(client_list)
 
     # scapy.arping(ip)
