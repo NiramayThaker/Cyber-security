@@ -4,6 +4,8 @@ import scapy.all as scapy
 
 
 def scan(ip):
+    # Returns dict of ip and mac of client
+    
     arp_req = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_req_broadcast = broadcast / arp_req
